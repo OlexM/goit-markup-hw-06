@@ -606,32 +606,177 @@ body {
 .modal-input {
   width: 100%;
   height: 40px;
-  margin-bottom: 26px;
+
   padding-left: 38px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   background-color: transparent;
+  outline: transparent;
+  transition-property: background-color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-input:focus {
-  color: var(--iris);
-  /* border-color: var(--iris); */
+  border-color: var(--iris);
+}
+.modal-input:focus + .input-icon {
+  fill: var(--iris);
+}
+.modal-message {
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  background-color: transparent;
+  outline: transparent;
+  padding: 8px 16px;
+  resize: none;
+}
+.modal-message::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  line-height: 1.16;
+  letter-spacing: 0.04em;
 }
 .input-wrap {
   position: relative;
 }
-.label-name {
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.04em;
-  color: var(--light-slate);
-}
+
 .label-other {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--light-slate);
 }
+.label-name {
+  letter-spacing: 0.04em;
+}
 .label-text {
   margin-bottom: 4px;
   display: inline-block;
+}
+.input-icon {
+  fill: var(--navy-blue);
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translatey(-50%);
+}
+.input-policy {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.input-check {
+  transition-property: background-color, background-image, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.policy-link {
+  color: var(--iris);
+  display: inline-block;
+  text-decoration: underline;
+  margin-left: 0.3em;
+}
+
+.check-text {
+  color: #757575;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 6px;
+  margin-bottom: 24px;
+}
+.check-text::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid var(--navy-blue);
+  border-radius: 2px;
+  margin-right: 8px;
+}
+.input-check:checked + .check-text::before {
+  background-color: var(--ocean);
+  border: none;
+  border-radius: 2px;
+  background-image: url(../images/check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.input-check:is(:hover, :focus) + .check-text::before {
+  border-color: var(--ocean);
+}
+.modal-btn {
+  width: 169px;
+  height: 56px;
+  background-color: var(--iris);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  color: var(--white);
+  display: block;
+  margin: 0 auto;
+  transition-property: background-color, border, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-btn:is(:hover, :focus) {
+  background-color: var(--ocean);
+}
+.footer-box {
+  display: flex;
+  flex-direction: column;
+}
+.form-box {
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+}
+.footer-form {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+}
+.footer-input {
+  width: 264px;
+  height: 40px;
+  padding: 0 16px;
+  background-color: transparent;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+.subscribe-title {
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.subscribe-btn {
+  width: 165px;
+  height: 40px;
+  padding: 8px 24px;
+  background-color: var(--iris);
+  border-radius: 4px;
+  border: none;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.subscribe-btn:is(:hover, :focus) {
+  background-color: var(--ocean);
+}
+.subscribe-icon {
+  fill: var(--white);
 }
